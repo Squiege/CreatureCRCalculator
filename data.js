@@ -47,4 +47,7 @@ const CR_TABLE = [
     { cr:"28", xp: 23_000, prof: 10, ac:[13, 15], hpRange: [871,900], attackBonus: [11,12], dmgRange: [62,63], saveDC: [21,22]},
     { cr:"29", xp: 24_000, prof: 10, ac:[13, 15], hpRange: [901,930], attackBonus: [11,12], dmgRange: [64,65], saveDC: [21,22]},
     { cr:"30", xp: 25_000, prof: 10, ac:[13, 15], hpRange: [931,960], attackBonus: [11,12], dmgRange: [66,67], saveDC: [21,22]}
-]
+];
+
+// Export the CR_TABLE for use in other modules and files
+export { CR_TABLE };
