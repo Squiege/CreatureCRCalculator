@@ -1,4 +1,4 @@
-//
+// Fetching elements from the DOM and adding event listeners to calculate the Challenge Rating (CR) based on user input
 
 import { calculateFinalCR } from "./calculator.js";
 
