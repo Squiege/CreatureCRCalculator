@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./dist/output.css" rel="stylesheet">
+    <title>Creature CR Calculator</title>
+</head>
+<body>
+    <div class="flex items-center justify-center">
+      <div class="text-center">
+        <h1 class="text-3xl font-bold">Creature CR Calculator</h1>
+      </div>
+    </div>
+    
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 space-y-6 p-4">
+  
+      <!-- Health Card -->
+      <div class="w-full max-w-md bg-white border-2 border-black p-6 rounded shadow">
+        <h2 class="text-lg font-bold mb-2">Health</h2>
+        <label class="block text-gray-700 mb-1">Hit Points</label>
+        <input type="number" id="hpRange" placeholder="Enter health points" class="w-full mb-4 p-2 border rounded" />
+    
+        <label class="block text-gray-700 mb-1">Armor Class</label>
+        <input type="number" id="ac" placeholder="Enter armor class" class="w-full p-2 border rounded" />
+      </div>
+    
+      <!-- Attack Card -->
+      <div class="w-full max-w-md bg-white border-2 border-black p-6 rounded shadow">
+        <h2 class="text-lg font-bold mb-2">Attack</h2>
+        <label class="block text-gray-700 mb-1">Attack Bonus</label>
+        <input type="number" id="attackBonus1" placeholder="Enter attack bonus" class="w-full mb-4 p-2 border rounded" />
+    
+        <label class="block text-gray-700 mb-1">Damage</label>
+        <input type="number" id="damage1" placeholder="Enter damage" class="w-full mb-4 p-2 border rounded" />
+    
+        <label class="block text-gray-700 mb-1">Damage Type</label>
+        <select id="damageType1" class="w-full mb-4 p-2 border rounded">
+          <option value="slashing">Slashing</option>
+          <option value="piercing">Piercing</option>
+          <option value="bludgeoning">Bludgeoning</option>
+          <option value="fire">Fire</option>
+          <option value="cold">Cold</option>
+          <option value="lightning">Lightning</option>
+          <option value="acid">Acid</option>
+          <option value="poison">Poison</option>
+          <option value="necrotic">Necrotic</option>
+          <option value="radiant">Radiant</option>
+          <option value="thunder">Thunder</option>
+          <option value="force">Force</option>
+          <option value="psychic">Psychic</option>
+          <option value="magical">Magical</option>
+          <option value="nonmagical">Nonmagical</option>
+        </select>
+    
+        <button id="addAttack" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+          Add New Attack
+        </button>
+      </div>
+    
+      <!-- Save Card -->
+      <div class="w-full max-w-md bg-white border-2 border-black p-6 rounded shadow">
+        <h2 class="text-lg font-bold mb-2">Saves</h2>
+        <label class="block text-gray-700 mb-1">Save DC</label>
+        <input type="number" id="saveDC" placeholder="Enter save DC" class="w-full mb-4 p-2 border rounded" />
+    
+        <label class="block text-gray-700 mb-1">Save Bonus</label>
+        <input type="number" id="saveBonus" placeholder="Enter save bonus" class="w-full p-2 border rounded" />
+      </div>
+    
+      <!-- Calculate Button -->
+      <div class="flex justify-center">
+        <button id="calculateCR" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+          Calculate CR
+        </button>
+      </div>
+    
+      <!-- Result Card -->
+      <div id="resultCard" class="hidden w-full max-w-md bg-white border-2 border-black p-6 rounded shadow">
+        <h2 class="text-lg font-bold mb-2">Result</h2>
+        <div id="result" class="text-center"></div>
+      </div> 
+
+    </div>
+
+  <script type="module" src="data.js"></script>
+  <script type="module" src="calculator.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
