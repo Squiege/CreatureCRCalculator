@@ -2,14 +2,30 @@
 
 import { calculateFinalCR } from "./calculator.js";
 
-document.getElementById("calculate-btn").addEventListener("click", () => {
-    const hp = parseInt(document.getElementById("hp-input").value);
-    const ac = parseInt(document.getElementById("ac-input").value);
-    const damage = parseInt(document.getElementById("damage-input").value);
-    const attackBonus = parseInt(document.getElementById("attack-input").value);
-    const saveDC = parseInt(document.getElementById("save-dc-input").value);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("calculateCR").addEventListener("click", () => {
+        const hp = parseInt(document.getElementById("hpRange").value);
+        const ac = parseInt(document.getElementById("ac").value);
+        const damage = parseInt(document.getElementById("damage1").value);
+        const attackBonus = parseInt(document.getElementById("attackBonus1").value);
+        const saveDC = parseInt(document.getElementById("saveDC").value);
 
-    const { defensiveCR, offensiveCR, finalCR } = calculateFinalCR(hp, ac, damage, attackBonus, saveDC);
+    // Basic check for filled values
+    if ([hp, ac, damage, attackBonus, saveDC].some(val => isNaN(val))) {
+        alert("Please fill out all input fields.");
+        return;
+    }
 
+    const { defensiveCR, offensiveCR, finalCR } = calculateFinalCR(
+        hp,
+        ac,
+        damage,
+        attackBonus,
+        saveDC
+    );
+
+    document.getElementById("resultCard").classList.remove("hidden");
     document.getElementById("result").innerText = `Final CR: ${finalCR} (Defensive: ${defensiveCR}, Offensive: ${offensiveCR})`;
+    });
 });
+
